@@ -13,7 +13,7 @@ CC2650 from Texas Instruments is an amazing piece of hardware that enables commu
 In this post we will take a look at how we can extend the communication with CC2650 by adding a full-duplex communication layer behind the BLE central so that we can read and write in to CC2650 from anywhere in the world. Since this might feel a bit abstract the image below might help to visualize what we are going to do.
 
 There are many ways to connect to a peripheral BLE device, but in this post we will be using a Raspberry Pi 2 as the BLE central device.
-![Communication](http://xsockets.net/$2/file/article-cc2650.png)
+![Communication](http://xsockets.net/$2/file/article-cc2650-1.png)
 The image illustrates that the CC2650 communicates with the RaspberryPi over BLE. Then the Pi has a TCP/IP  connection with XSockets (in this case using nodejs) to be able to send/receive data in full-duplex. XSockets will then be able to send/receive data from any TCP/IP connection so that we can read/write to the CC2650 from anywhere. In the image above the clients is represented by a few selected ones, but it can be anything that has TCP/IP.
 
 ## IoT & Real-Time Communication
