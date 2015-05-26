@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.Enterprise</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.Enterprise.Scaling.BaseScaleOut">
+            <summary>
+            Default scaleout of XSockets
+            Will scale over TCP/IP sockets
+            
+            Derive from XSockets.Enterprise.BaseScaleOut to implement your own scaleout
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.Subscribe">
+            <summary>
+            Will be called by the BaseScaleOut constructor (after the call to Init)
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.Init">
+            <summary>
+            Will be called by the BaseScaleOut constructor.
+            Initialize things for your scaleout here if needed
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.AddScaleOut(System.String)">
+            <summary>
+            For adding a new server in the scaleout
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.RemoveScaleOut(System.String)">
+            <summary>
+            For removing a server from the scaleout
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.Publish(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Will be called when a message arrives into XSockets (if scaling is enabled)
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.BaseScaleOut.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XSockets.Enterprise.Loadbalancing.Connector">
+            <summary>
+            Loadbalancer
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Loadbalancing.Connector.#ctor(System.Collections.Generic.List{System.Net.IPEndPoint})">
+            <summary>
+            Ctor, pass in all endpoints for the loadbalancer
+            </summary>
+            <param name="endpoints">List of IPEndpoints</param>
+        </member>
+        <member name="M:XSockets.Enterprise.Loadbalancing.Connector.Start(System.Net.IPEndPoint)">
+            <summary>
+            Start the loadbalancer
+            </summary>
+            <param name="local">The public endpoint for the loadbalancer</param>
+        </member>
+        <member name="P:XSockets.Enterprise.Loadbalancing.Connector.OnConnected">
+            <summary>
+            Action that will be triggered when a client connects
+            </summary>
+        </member>
+        <member name="P:XSockets.Enterprise.Loadbalancing.Connector.OnDisconnected">
+            <summary>
+            Action that will be triggered when a client disconnects
+            </summary>
+        </member>
+        <member name="T:XSockets.Enterprise.Scaling.SiblingPool">
+            <summary>
+            Acts as a wrapper and abstraction for XWebSocket.
+            If you are only publishing this is the class to use
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SiblingPool.Send(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Send prepared ITextArgs
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SiblingPool.Send(System.Object,System.String,System.String)">
+            <summary>
+            Send any object, with an eventname... will be transformed into a ITextArgs
+            </summary>
+            <param name="obj"></param>
+            <param name="eventname"></param>
+            <param name="controller"></param>
+        </member>
+        <member name="T:XSockets.Enterprise.Scaling.SocketWrapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.#ctor(System.Net.Sockets.Socket)">
+            <summary>
+            
+            </summary>
+            <param name="socket"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Listen(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="backlog"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Bind(System.Net.EndPoint)">
+            <summary>
+            
+            </summary>
+            <param name="endPoint"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Receive(System.Byte[],System.Action{System.Int32},System.Action{System.Exception},System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="callback"></param>
+            <param name="error"></param>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Accept(System.Action{XSockets.Enterprise.Scaling.SocketWrapper},System.Action{System.Exception})">
+            <summary>
+            
+            </summary>
+            <param name="callback"></param>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.EndSend(System.IAsyncResult)">
+            <summary>
+            
+            </summary>
+            <param name="asyncResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.SocketWrapper.Send(System.Byte[],System.Action,System.Action{System.Exception})">
+            <summary>
+            
+            </summary>
+            <param name="buffer"></param>
+            <param name="callback"></param>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.Enterprise.Scaling.SocketWrapper.RemoteIpAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XSockets.Enterprise.Scaling.SocketWrapper.Socket">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XSockets.Enterprise.Scaling.SocketWrapper.Connected">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XSockets.Enterprise.Scaling.SocketWrapper.Stream">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XSockets.Enterprise.Scaling.XSocketsScaleOut">
+            <summary>
+            Default scaleout of XSockets
+            Will scale over TCP/IP sockets
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.AddScaleOut(System.String)">
+            <summary>
+            Add another scaleout location
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.RemoveScaleOut(System.String)">
+            <summary>
+            Remove a scaleout location
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.Init">
+            <summary>
+            Will be called from the BaseScaleOut Ctor to initialize the scaleout
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.Subscribe">
+            <summary>
+            If having a half duplex scaleout mechanism this method will do the polling for data
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOut.Publish(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Publish a new message to the scale out
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:XSockets.Enterprise.Scaling.XSocketsScaleOutConfig">
+            <summary>
+            ScalOut configuration object
+            </summary>
+        </member>
+        <member name="M:XSockets.Enterprise.Scaling.XSocketsScaleOutConfig.#ctor(System.String)">
+            <summary>
+            Ctor
+            </summary>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="P:XSockets.Enterprise.Scaling.XSocketsScaleOutConfig.Connectionstring">
+            <summary>
+            Connection string to what ever the scaleout uses
+            </summary>
+        </member>
+    </members>
+</doc>

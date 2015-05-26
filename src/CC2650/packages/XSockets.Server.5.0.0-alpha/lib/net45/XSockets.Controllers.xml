@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.Controllers.Generic">
+            <summary>
+            The built-in controller of XSockets.   
+            </summary>
+        </member>
+        <member name="M:XSockets.Controllers.Generic.OnMessage(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Overrides OnMessage and dispatch the incomming data to all clients connected
+            Uses RPC instead of PUB/SUB as of v4.0
+            </summary>
+            <param name="message"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>CC2650.PiClient</Name>
+    <RootNamespace>CC2650</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>86c5fa64-bc2d-47fe-9a78-ec2f14e0089d</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="node_modules\sensortag\index.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\dump.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\examples\advertisement-discovery.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\examples\enter-exit.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\examples\peripheral-explorer.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\examples\pizza\central.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\examples\pizza\pizza.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\index.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\install.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\characteristic.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\descriptor.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\distributed\bindings.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\linux\bindings.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\linux\hci-ble.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\linux\l2cap-ble.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\mac\bindings.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\mac\legacy.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\mac\mavericks.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\mac\yosemite.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\noble.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\peripheral.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\service.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\lib\websocket\bindings.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\node_modules\debug\debug.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\node_modules\debug\index.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\node_modules\debug\lib\debug.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\test.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\test\test-characteristic.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\test\test-descriptor.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\test\test-peripheral.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\test\test-service.js" />
+    <Compile Include="node_modules\sensortag\node_modules\noble\ws-slave.js" />
+    <Compile Include="node_modules\sensortag\test.js" />
+    <Compile Include="node_modules\xsockets.net\sample.js" />
+    <Compile Include="node_modules\xsockets.net\xsockets.net.js" />
+    <Content Include="node_modules\sensortag\.npmignore" />
+    <Content Include="node_modules\sensortag\LICENSE" />
+    <Content Include="node_modules\sensortag\node_modules\noble\.npmignore" />
+    <Content Include="node_modules\sensortag\node_modules\noble\binding.gyp" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\binding.Makefile" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\config.gypi" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\hci-ble.target.mk" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\l2cap-ble.target.mk" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Makefile" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\hci-ble.d" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\l2cap-ble.d" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\hci-ble\src\hci-ble.o.d" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\l2cap-ble\src\l2cap-ble.o.d" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\l2cap-ble\src\utility.o.d" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\hci-ble" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\l2cap-ble" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\linker.lock" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\hci-ble\src\hci-ble.o" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\l2cap-ble\src\l2cap-ble.o" />
+    <Content Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\l2cap-ble\src\utility.o" />
+    <Content Include="node_modules\sensortag\node_modules\noble\examples\pizza\README.md" />
+    <Content Include="node_modules\sensortag\node_modules\noble\lib\characteristics.json" />
+    <Content Include="node_modules\sensortag\node_modules\noble\lib\descriptors.json" />
+    <Content Include="node_modules\sensortag\node_modules\noble\lib\services.json" />
+    <Content Include="node_modules\sensortag\node_modules\noble\LICENSE" />
+    <Content Include="node_modules\sensortag\node_modules\noble\node_modules\debug\package.json" />
+    <Content Include="node_modules\sensortag\node_modules\noble\node_modules\debug\Readme.md" />
+    <Content Include="node_modules\sensortag\node_modules\noble\package.json" />
+    <Content Include="node_modules\sensortag\node_modules\noble\README.md" />
+    <Content Include="node_modules\sensortag\node_modules\noble\src\hci-ble.c" />
+    <Content Include="node_modules\sensortag\node_modules\noble\src\l2cap-ble.c" />
+    <Content Include="node_modules\sensortag\node_modules\noble\src\utility.c" />
+    <Content Include="node_modules\sensortag\node_modules\noble\src\utility.h" />
+    <Content Include="node_modules\sensortag\package.json" />
+    <Content Include="node_modules\sensortag\README.md" />
+    <Content Include="node_modules\xsockets.net\package.json" />
+    <Content Include="node_modules\xsockets.net\README.md" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="node_modules\" />
+    <Folder Include="node_modules\sensortag\" />
+    <Folder Include="node_modules\sensortag\node_modules\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\hci-ble\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\hci-ble\src\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\l2cap-ble\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\.deps\Release\obj.target\l2cap-ble\src\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\hci-ble\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\hci-ble\src\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\l2cap-ble\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\build\Release\obj.target\l2cap-ble\src\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\examples\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\examples\pizza\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\lib\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\lib\distributed\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\lib\linux\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\lib\mac\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\lib\websocket\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\node_modules\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\node_modules\debug\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\node_modules\debug\lib\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\src\" />
+    <Folder Include="node_modules\sensortag\node_modules\noble\test\" />
+    <Folder Include="node_modules\xsockets.net\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "TI-CC2650";    
+}
+
+<div class="jumbotron hidden-xs">
+    <h2>Texas Instruments SimpleLink™ <small>multi-standard CC2650 wireless MCU</small></h2>
+    <div style="text-align: center;">
+        <img src="http://www.mouser.de/images/microsites/TI_CC2650STK.png" /><br />
+        
+        controlled from anywhere in the world by using BLE in combination with <a href="http://xsockets.net" target="_blank">XSockets.NET</a> / <a href="http://nodejs.org" target="_blank">NodeJS</a> / <a href="https://www.raspberrypi.org/" target="_blank">RaspberryPi</a> / <a href="http://azure.microsoft.com/" target="_blank">Azure</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Individual Temp Limit</h3>
+        <div>
+            Only send me data when the temperature is over <span class="label label-info" data-bind="html:templimit"></span>
+            
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Set TempLimit <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" class="templimit" data-temp="10">10 &deg;C</a></li>
+                    <li><a href="#" class="templimit" data-temp="15">15 &deg;C</a></li>
+                    <li><a href="#" class="templimit" data-temp="20">20 &deg;C</a></li>                    
+                    <li><a href="#" class="templimit" data-temp="25">25 &deg;C</a></li>
+                    <li><a href="#" class="templimit" data-temp="30">30 &deg;C</a></li>
+                    <li><a href="#" class="templimit" data-temp="35">35 &deg;C</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Connected Tags</h3>
+        <table class="table table-bordered table-condensed table-responsive">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Object Temp &deg;C</th>
+                    <th>Ambient Temp &deg;C</th>
+                    <th data-container="body" data-toggle="popover" data-placement="top" title="BLE Service Access" data-content="This will access the service on the BLE device and actually turn it on/off from anywhere in the world!">Toggle</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach:sensors">
+                <tr>
+                    <td data-bind="text:n"></td>
+                    <td data-bind="text:o"></td>
+                    <td data-bind="text:a"></td>
+                    <td>
+                        <button data-bind="visible:(enabled() == true), click:sendDisable" id="btn-off" class="btn-toggle btn btn-sm btn-danger">Switch Off</button>
+                        <button data-bind="visible:(enabled() == false), click:sendEnable" id="btn-on" class="btn-toggle btn btn-sm btn-success">Switch On</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        var prodSevrer = 'ws://cc2650.cloudapp.net:8080';
+        var testSevrer = 'ws://localhost:4502';
+        var sensor = function (_id, _o, _a, _n) {
+            var self = this;
+            this.id = ko.observable(_id);
+            this.o = ko.observable(_o);
+            this.a = ko.observable(_a);
+            this.n = ko.observable(_n);
+            this.enabled = ko.observable(false);
+            this.update = function (data) {                
+                self.n(data.name);
+                self.o(data.obj.toFixed(3));
+                self.a(data.amb.toFixed(3));
+                self.enabled(true);
+            };
+            this.sendEnable = function () {
+                monitor.invoke('enableIrTemp', self.id());
+            };
+            this.sendDisable = function () {
+                monitor.invoke('disableIrTemp', self.id());
+            };
+            this.enable = function () {
+                self.enabled(true);
+            };
+            this.disable = function () {
+                self.enabled(false);
+            };
+            this.visible = function () {
+                return self.id() !== undefined;
+            };
+        };
+        var vm = {
+            templimit: ko.observable('10 &deg;C'),
+            sensors: ko.observableArray([]),
+            addOrUpdate: function (d) {
+                var match = ko.utils.arrayFirst(vm.sensors(), function (s) {
+                    return d.id === s.id();
+                });                
+                if (!match) {
+                    vm.sensors.push(new sensor(d.id, d.obj, d.amb, d.name));
+                } else {
+                    match.update(d);
+                }
+            },
+            remove: function (id) {
+                vm.sensors.remove(function (s) { return s.id() == id; });
+            },
+            enable: function (id) {
+                var match = ko.utils.arrayFirst(vm.sensors(), function (s) {
+                    return id === s.id();
+                });
+
+                if (match) {
+                    match.enable();
+                }
+            },
+            disable: function (id) {
+                var match = ko.utils.arrayFirst(vm.sensors(), function (s) {
+                    return id === s.id();
+                });
+
+                if (match) {
+                    match.disable();
+                }
+            }
+        };
+        ko.applyBindings(vm);
+        
+        var conn = new XSockets.WebSocket(testSevrer, ['monitor']);
+        
+        conn.onerror = function (e) {
+            alert('error',e);
+        };
+        var monitor = conn.controller('monitor');
+
+        monitor.on('sensors', function (data) {            
+            data.forEach(function (d) {            
+                vm.addOrUpdate(d);
+            });
+        });
+
+        monitor.on('sensorConnected', function (d) {            
+            vm.addOrUpdate(d);
+        });
+        monitor.on('sensorDisconnected', function (id) {            
+            vm.remove(id);
+        });
+
+        monitor.on('irTempEnabled', function (id) {            
+            vm.enable(id);
+        });
+        monitor.on('irTempDisabled', function (id) {            
+            vm.disable(id);
+        });
+
+        monitor.on('irTempChange', function (d) {           
+            vm.addOrUpdate(d);
+        });
+
+        monitor.on('newtemplimit', function(d) {
+            vm.templimit(d + ' &deg;C');
+        });
+
+        $(document).on("mouseover", ".btn-toggle", function () {            
+            $('th').popover('show');
+        });
+        $(document).on("mouseout", ".btn-toggle", function () {            
+            $('th').popover('hide');
+        });
+
+        $('.templimit').click(function () {            
+            monitor.invoke('settemplimit', $(this).data('temp'));
+        });
+
+        $('th').popover();
+
+
+    </script>
+}

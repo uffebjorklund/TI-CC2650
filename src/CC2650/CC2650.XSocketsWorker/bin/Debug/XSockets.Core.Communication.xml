@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.Core.Communication</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.Core.Communication.Helpers.Factories.ControllerWrapper">
+            <summary>
+            Wraps a controller by type
+            </summary>
+        </member>
+        <member name="T:XSockets.Core.Communication.Helpers.Factories.XSocketFactory">
+            <summary>
+            Inspects the plugins at startup as they are registered.
+            This to do reflection only at startup and speed up process at send/recieve.
+            </summary>    
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.#ctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.AddPlugin(XSockets.Core.Common.Socket.IXSocketController,XSockets.Plugin.Framework.Attributes.IXSocketMetadata)">
+            <summary>
+            Registers a plugin in the factory and also sets custom events if there is any.
+            </summary>
+            <param name="plugin"></param>
+            <param name="metadata"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.RemovePlugin(XSockets.Core.Common.Socket.IXSocketController)">
+            <summary>
+            Removes the plugin from the factory
+            </summary>
+            <param name="plugin"></param>
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.GetCustomEvents(XSockets.Core.Common.Socket.IXSocketController)">
+            <summary>
+            Returns all custom events (action methods) registered in the controller class.
+            </summary>
+            <param name="plugin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.Create(XSockets.Core.Common.Socket.IXSocketController)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.Core.Communication.Helpers.Factories.XSocketFactory.Plugins">
+            <summary>
+            Registered controllers (modules of IXSocketController)
+            Key is Alias of controller and value holds Type and Controller
+            </summary>
+        </member>
+        <member name="T:XSockets.Core.Communication.Helpers.Factories.XSocketProtocolFactory">
+            <summary>
+            Holds all protocol plugins found at startup and also provides the correct protocol when a client connects
+            </summary>
+        </member>
+        <member name="F:XSockets.Core.Communication.Helpers.Factories.XSocketProtocolFactory._protocols">
+            <summary>
+            Container for all registered protocols.
+            </summary>
+        </member>
+        <member name="M:XSockets.Core.Communication.Helpers.Factories.XSocketProtocolFactory.AddPlugin(XSockets.Core.Common.Protocol.IXSocketProtocol,XSockets.Core.Common.Configuration.IConfigurationSetting)">
+            <summary>
+            Register a protocol in the factory
+            </summary>
+            <param name="protocol"></param>
+            <param name="configurationSetting"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.Core.Communication.Helpers.Factories.XSocketProtocolFactory.Protocols">
+            <summary>
+            Protocols loaded in the factory
+            </summary>
+        </member>
+    </members>
+</doc>

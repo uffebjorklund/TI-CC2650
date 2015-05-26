@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.CustomProtocol</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.CustomProtocol.PuttyProtocol">
+            <summary>
+            A really simple/stupid protocol for Putty.
+            The magic here is that clients connected to this protocol (TelNet, Arduino, Netduino or whatever) will be able
+            to communicate cross-protocol with client talking RFC6455 for example (or any other implemented protocol).    
+            </summary>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.DoHandshake">
+            <summary>
+            Perform any extra logic for handshake, build a hostresponse etc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.GetHostResponse">
+            <summary>
+            Returns the host response of the putty protocol and adds a CRLF
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.CanDoHeartbeat">
+            <summary>
+            Set to true if your clients connected to this protocol will return pong on ping.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.ReceiveData(System.ArraySegment{System.Byte},XSockets.Core.Common.Protocol.IReadState,System.Action{XSockets.Core.Common.Protocol.FrameType,System.Collections.Generic.IList{System.Byte}})">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="readState"></param>
+            <param name="processFrame"></param>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.NewInstance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.OnIncomingFrame(System.Collections.Generic.IList{System.Byte},XSockets.Core.Common.Socket.Event.Arguments.MessageType)">
+            <summary>
+            Converts the incomming data from putty into a IMessage
+            The data is expected to be in the format "controller|topic|data"
+            </summary>
+            <param name="payload"></param>
+            <param name="messageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.PuttyProtocol.OnOutgoingFrame(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Converts a IMessage into a string to send to putty.
+            Putty will receive the data in the format "controller|topic|data"        
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.CustomProtocol.PuttyProtocol.GetPathRegex">
+            <summary>
+            Extract the path (controller name) from the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.PuttyProtocol.ProtocolIdentifier">
+            <summary>
+            A simple identifier fot the protocol since the ProtocolPattern might be complex or unfriendly to read.
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.PuttyProtocol.ProtocolPattern">
+            <summary>
+            The string to identify the protocol in the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.PuttyProtocol.HostResponse">
+            <summary>
+            The string to return after handshake
+            </summary>
+        </member>
+        <member name="T:XSockets.CustomProtocol.TextProtocol">
+            <summary>
+            A really simple/stupid protocol for Text.
+            The magic here is that clients connected to this protocol (TelNet, Arduino, Netduino or whatever) will be able
+            to communicate cross-protocol with client talking RFC6455 for example (or any other implemented protocol).    
+            </summary>
+        </member>
+        <member name="M:XSockets.CustomProtocol.TextProtocol.DoHandshake">
+            <summary>
+            Perform any extra logic for handshake, build a hostresponse etc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.TextProtocol.CanDoHeartbeat">
+            <summary>
+            Set to true if your clients connected to this protocol will return pong on ping.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.TextProtocol.NewInstance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.TextProtocol.OnIncomingFrame(System.Collections.Generic.IList{System.Byte},XSockets.Core.Common.Socket.Event.Arguments.MessageType)">
+            <summary>
+            Converts the incomming data in form of
+            "Controller|Topic|Data"
+            to a IMessage
+            </summary>
+            <param name="payload">Data coming from the client</param>
+            <param name="messageType">Text or Binary (always text for this protocol)</param>
+            <returns>The IMessage to pass into the server</returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.TextProtocol.OnOutgoingFrame(XSockets.Core.Common.Socket.Event.Interface.IMessage)">
+            <summary>
+            Converts the IMessage into the simple form
+            "Controller|Topic|Data"
+            </summary>
+            <param name="message">The IMessage going out to the client</param>
+            <returns>IMessage converted into the correct form of this protocol and converted to bytes</returns>
+        </member>
+        <member name="P:XSockets.CustomProtocol.TextProtocol.GetPathRegex">
+            <summary>
+            Extract the path (controller name) from the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.TextProtocol.ProtocolIdentifier">
+            <summary>
+            A simple identifier fot the protocol since the ProtocolPattern might be complex or unfriendly to read.
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.TextProtocol.ProtocolPattern">
+            <summary>
+            The string to identify the protocol in the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.TextProtocol.HostResponse">
+            <summary>
+            The string to return after handshake
+            </summary>
+        </member>
+        <member name="T:XSockets.CustomProtocol.JsonProtocol">
+            <summary>
+            A really simple/stupid protocol for JSON.
+            The magic here is that clients connected to this protocol (TelNet, Arduino, Netduino or whatever) will be able
+            to communicate cross-protocol with client talking RFC6455 for example (or any other implemented protocol).    
+            </summary>
+        </member>
+        <member name="M:XSockets.CustomProtocol.JsonProtocol.DoHandshake">
+            <summary>
+            Perform any extra logic for handshake, build a hostresponse etc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.JsonProtocol.CanDoHeartbeat">
+            <summary>
+            Set to true if your clients connected to this protocol will return pong on ping.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.JsonProtocol.NewInstance">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.CustomProtocol.JsonProtocol.OnIncomingFrame(System.Collections.Generic.IList{System.Byte},XSockets.Core.Common.Socket.Event.Arguments.MessageType)">
+            <summary>
+            
+            </summary>
+            <param name="payload"></param>
+            <param name="messageType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.CustomProtocol.JsonProtocol.GetPathRegex">
+            <summary>
+            Extract the path (controller name) from the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.JsonProtocol.ProtocolIdentifier">
+            <summary>
+            A simple identifier fot the protocol since the ProtocolPattern might be complex or unfriendly to read.
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.JsonProtocol.ProtocolPattern">
+            <summary>
+            The string to identify the protocol in the handshake
+            </summary>
+        </member>
+        <member name="P:XSockets.CustomProtocol.JsonProtocol.HostResponse">
+            <summary>
+            The string to return after handshake
+            </summary>
+        </member>
+    </members>
+</doc>

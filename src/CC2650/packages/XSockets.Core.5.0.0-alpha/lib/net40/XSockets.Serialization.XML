@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XSockets.Serialization</name>
+    </assembly>
+    <members>
+        <member name="T:XSockets.Serialization.XSocketJsonSerializer">
+            <summary>
+            The default plugin for serialization
+            To have your custom serializer implement IXSocketJsonSerializer
+            </summary>    
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.#cctor">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.SerializeToString``1(``0)">
+            <summary>
+            Serialize a object of type T to a JSON string
+            </summary>
+            <typeparam name="T">Type of the object</typeparam>
+            <param name="obj">Object to serialize</param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.SerializeToString(System.Object,System.Type)">
+            <summary>
+            Serialize a object to the type passed in to a JSON string
+            </summary>
+            <param name="obj">Object to serialize from</param>
+            <param name="type">Type to serialize to</param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.DeserializeFromString``1(System.String)">
+            <summary>
+            Deserialize JSON into the type T
+            </summary>
+            <typeparam name="T">The target type</typeparam>
+            <param name="json">The JSON to convert to the type T</param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.DeserializeFromString(System.String,System.Type)">
+            <summary>
+            Deserialize json into the type passed in
+            </summary>
+            <param name="json">The JSON representation of the type to serialize to</param>
+            <param name="type">The type to convert to</param>
+            <returns></returns>
+        </member>
+        <member name="M:XSockets.Serialization.XSocketJsonSerializer.DeserializeFromString(System.String,System.Reflection.ParameterInfo[])">
+            <summary>
+            Deserializes JSON into several types of the correct type based on parameterinfo passed in
+            </summary>
+            <param name="json">JSON representation of all parameters that we want out</param>
+            <param name="parameterInfo">A list of parameterinfo that we want to have the JSON converted into</param>
+            <returns></returns>
+        </member>
+        <member name="P:XSockets.Serialization.XSocketJsonSerializer.SerializerSettings">
+            <summary>
+            For using settins on the serializer such as ignoring null-values
+            </summary>
+        </member>
+    </members>
+</doc>
