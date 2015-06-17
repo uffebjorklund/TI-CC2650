@@ -1,6 +1,5 @@
 ﻿namespace CC2650.Modules.Model
 {
-
     public class TempModel
     {
         /// <summary>

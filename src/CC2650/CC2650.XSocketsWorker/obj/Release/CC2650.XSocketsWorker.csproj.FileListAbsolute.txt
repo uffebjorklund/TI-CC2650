@@ -211,15 +211,6 @@ C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Re
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\Serilog.FullNetFx.pdb
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\Serilog.FullNetFx.xml
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\System.Spatial.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Controllers.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Core.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Core.Common.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Core.Communication.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Enterprise.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Plugin.Framework.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Protocol.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Serialization.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Server.xml
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\de\Microsoft.Data.Edm.resources.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\es\Microsoft.Data.Edm.resources.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\fr\Microsoft.Data.Edm.resources.dll
@@ -259,3 +250,8 @@ C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Re
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\obj\Release\CC2650.XSocketsWorker.csprojResolveAssemblyReference.cache
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\obj\Release\CC2650.XSocketsWorker.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\obj\Release\CC2650.XSocketsWorker.pdb
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Protocol.Json.dll
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Protocol.Putty.dll
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\XSockets.Protocol.Mqtt.dll
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\Microsoft.ServiceBus.dll
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.XSocketsWorker\bin\Release\Microsoft.ServiceBus.xml

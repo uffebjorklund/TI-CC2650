@@ -67,6 +67,8 @@
     <Compile Include="node_modules\sensortag\test.js" />
     <Compile Include="node_modules\xsockets.net\sample.js" />
     <Compile Include="node_modules\xsockets.net\xsockets.net.js" />
+    <Compile Include="SensorTagTest.js" />
+    <Compile Include="XSocketsTest.js" />
     <Content Include="node_modules\sensortag\.npmignore" />
     <Content Include="node_modules\sensortag\LICENSE" />
     <Content Include="node_modules\sensortag\node_modules\noble\.npmignore" />

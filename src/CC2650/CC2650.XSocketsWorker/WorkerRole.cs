@@ -1,11 +1,10 @@
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.WindowsAzure.ServiceRuntime;
-using XSockets.Core.Common.Socket;
-using XSockets.Plugin.Framework;
-
 namespace CC2650.XSocketsWorker
 {
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.WindowsAzure.ServiceRuntime;
+    using XSockets.Core.Common.Socket;
+    using XSockets.Plugin.Framework;
     public class WorkerRole : RoleEntryPoint
     {
         private IXSocketServerContainer _container;

@@ -73,6 +73,6 @@ C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\bin\System
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\bin\System.Web.WebPages.Razor.xml
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\bin\System.Web.Optimization.xml
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\obj\Release\CC2650.WebMonitor.csprojResolveAssemblyReference.cache
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\obj\Release\CC2650.WebMonitor.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\obj\Release\CC2650.WebMonitor.pdb
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WebMonitor\obj\Release\CC2650.WebMonitor.csprojResolveAssemblyReference.cache

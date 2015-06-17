@@ -1,4 +1,4 @@
 C:\Users\Uffe\Desktop\XSocketsLab\NDC\CC2650\CC2650\obj\Release\CC2650.PiClient.njsprojResolveAssemblyReference.cache
 C:\Users\Uffe\Desktop\XSocketsLab\NDC\CC2650\CC2650\bin\Microsoft.NodejsTools.WebRole.dll
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650\obj\Release\CC2650.PiClient.njsprojResolveAssemblyReference.cache
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650\obj\Release\CC2650.PiClient.njsprojResolveAssemblyReference.cache

@@ -13,7 +13,7 @@
     <Property name="Configuration" value="Release" />
     <Property name="Platform" value="AnyCPU" />
     <Property name="RoleTargetFramework" value="v4.5" />
-    <Property name="OutputDir" value="C:\Users\Uffe\Desktop\XSocketsLab\NDC\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\" />
+    <Property name="OutputDir" value="C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\" />
     <Property name="EntryPoint" value="CC2650.XSocketsWorker.dll" />
     <Property name="SourceDir" value="" />
     <Property name="SitePhysicalPath" value="" />

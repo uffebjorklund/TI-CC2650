@@ -50,11 +50,19 @@
                     <td data-bind="text:o"></td>
                     <td data-bind="text:a"></td>
                     <td>
+                        @*<button class="btn btn-default disabled">N/A</button>*@
                         <button data-bind="visible:(enabled() == true), click:sendDisable" id="btn-off" class="btn-toggle btn btn-sm btn-danger">Switch Off</button>
                         <button data-bind="visible:(enabled() == false), click:sendEnable" id="btn-on" class="btn-toggle btn btn-sm btn-success">Switch On</button>
                     </td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">
+                        <span class="badge pull-right" data-bind="text:containerid"></span>
+                    </th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
@@ -62,8 +70,8 @@
 @section scripts
 {
     <script>
-        var prodSevrer = 'ws://cc2650.cloudapp.net:8080';
-        var testSevrer = 'ws://localhost:4502';
+        var prodServer = 'ws://cc2650.cloudapp.net:8080';
+        var testServer = 'ws://localhost:4502';
         var sensor = function (_id, _o, _a, _n) {
             var self = this;
             this.id = ko.observable(_id);
@@ -73,14 +81,16 @@
             this.enabled = ko.observable(false);
             this.update = function (data) {                
                 self.n(data.name);
-                self.o(data.obj.toFixed(3));
-                self.a(data.amb.toFixed(3));
+                self.o(data.lastValue.obj.toFixed(3));
+                self.a(data.lastValue.amb.toFixed(3));
                 self.enabled(true);
             };
             this.sendEnable = function () {
+                console.log(self.id());
                 monitor.invoke('enableIrTemp', self.id());
             };
             this.sendDisable = function () {
+                console.log(self.id());
                 monitor.invoke('disableIrTemp', self.id());
             };
             this.enable = function () {
@@ -94,14 +104,17 @@
             };
         };
         var vm = {
+            containerid: ko.observable('-'),
             templimit: ko.observable('10 &deg;C'),
             sensors: ko.observableArray([]),
             addOrUpdate: function (d) {
+                console.log(d);
                 var match = ko.utils.arrayFirst(vm.sensors(), function (s) {
                     return d.id === s.id();
                 });                
                 if (!match) {
-                    vm.sensors.push(new sensor(d.id, d.obj, d.amb, d.name));
+
+                    vm.sensors.push(new sensor(d.id, d.lastValue.obj, d.lastValue.amb, d.name));
                 } else {
                     match.update(d);
                 }
@@ -130,12 +143,16 @@
         };
         ko.applyBindings(vm);
         
-        var conn = new XSockets.WebSocket(testSevrer, ['monitor']);
+        var conn = new XSockets.WebSocket(testServer, ['monitor']);
         
         conn.onerror = function (e) {
             alert('error',e);
         };
         var monitor = conn.controller('monitor');
+
+        monitor.on('containerid', function (id) {
+            vm.containerid(id);
+        });
 
         monitor.on('sensors', function (data) {            
             data.forEach(function (d) {            
