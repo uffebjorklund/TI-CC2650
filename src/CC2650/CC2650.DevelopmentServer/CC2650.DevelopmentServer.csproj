@@ -126,11 +126,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Broker.cs" />
     <Compile Include="Config1.cs" />
+    <Compile Include="Config3.cs" />
     <Compile Include="Config2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XSocketsNET\DefaultLogger.cs" />
+    <Compile Include="XSocketsNET\ServerExample\Broker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

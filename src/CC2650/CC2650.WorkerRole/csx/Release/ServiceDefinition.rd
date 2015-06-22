@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CC2650.WorkerRole" generation="1" functional="0" release="0" Id="6660e470-cd54-413e-9096-eec9265533a2" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CC2650.WorkerRole" generation="1" functional="0" release="0" Id="53e89560-517f-4304-8d45-e4e53c40e26b" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="CC2650.WorkerRoleGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -92,9 +92,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="bd759dd8-3485-415b-83a3-009a293c04e3" ref="Microsoft.RedDog.Contract\ServiceContract\CC2650.WorkerRoleContract@ServiceDefinition">
+    <implementation Id="d9143f05-12f9-43fc-a9ce-402e5aa13213" ref="Microsoft.RedDog.Contract\ServiceContract\CC2650.WorkerRoleContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="1d7c452b-c9da-439c-a9ba-bc118580b538" ref="Microsoft.RedDog.Contract\Interface\CC2650.XSocketsWorker:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="ec3a2167-b31e-41c3-8490-ba69181339b5" ref="Microsoft.RedDog.Contract\Interface\CC2650.XSocketsWorker:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/CC2650.WorkerRole/CC2650.WorkerRoleGroup/CC2650.XSocketsWorker:Endpoint1" />
           </inPort>

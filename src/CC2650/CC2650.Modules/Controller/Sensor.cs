@@ -1,7 +1,4 @@
-﻿
-
-
-namespace CC2650.Modules.Controller
+﻿namespace CC2650.Modules.Controller
 {
     using XSockets.Core.Common.Socket.Event.Attributes;    
     using System.Threading.Tasks;
@@ -68,7 +65,8 @@ namespace CC2650.Modules.Controller
 
         public void IrTempNotify(SensorInfo sensorInfo)
         {
-            this.InvokeTo<Monitor>(p => p.TempLimit <= sensorInfo.lastValue.obj || p.TempLimit <= sensorInfo.lastValue.amb, sensorInfo, "irtempchange");
+            this.InvokeTo<Monitor>(p => p.TempLimit <= sensorInfo.lastValue.obj || p.TempLimit <= sensorInfo.lastValue.amb, 
+                sensorInfo, "irtempchange");
         }
 
         /// <summary>

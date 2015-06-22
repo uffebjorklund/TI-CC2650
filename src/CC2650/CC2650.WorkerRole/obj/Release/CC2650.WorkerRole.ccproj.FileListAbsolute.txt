@@ -204,4 +204,3 @@ C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Releas
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\XSockets.Enterprise.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\XSockets.Logger.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\XSockets.Server.dll
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.WorkerRole\obj\Release\CC2650.XSocketsWorker\Microsoft.ServiceBus.dll

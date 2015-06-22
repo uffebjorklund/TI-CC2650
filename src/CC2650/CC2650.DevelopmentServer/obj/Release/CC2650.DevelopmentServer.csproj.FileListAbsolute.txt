@@ -103,5 +103,3 @@ C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\obj
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\bin\Release\XSockets.Protocol.Json.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\bin\Release\XSockets.Protocol.Putty.dll
 C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\bin\Release\XSockets.Protocol.Mqtt.dll
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\bin\Release\Microsoft.ServiceBus.dll
-C:\Users\Uffe\Documents\GitHub\TI-CC2650\src\CC2650\CC2650.DevelopmentServer\bin\Release\Microsoft.ServiceBus.xml

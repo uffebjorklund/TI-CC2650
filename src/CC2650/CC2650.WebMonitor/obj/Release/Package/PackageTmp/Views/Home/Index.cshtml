@@ -45,7 +45,7 @@
                 </tr>
             </thead>
             <tbody data-bind="foreach:sensors">
-                <tr>
+                <tr data-bind="css:enabled() == true ? 'success' : 'danger'">
                     <td data-bind="text:n"></td>
                     <td data-bind="text:o"></td>
                     <td data-bind="text:a"></td>
