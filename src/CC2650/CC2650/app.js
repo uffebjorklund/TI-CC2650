@@ -23,7 +23,7 @@ TexasInstrument.CC2650 = (function (sensortag, xsockets) {
         //When the controller is open on the server set the name of the unit and start scanning for SensorTags
         sensorcontroller.onopen = function () {
             //Set Name
-            sensorcontroller.invoke('SetName', 'CC2650@NDCOslo');
+            sensorcontroller.setProperty('SetName', 'CC2650@NDCOslo');
             if(targetUUID) {
                 console.log('connecting to ', targetUUID);
                 sensortag.discoverByUuid(targetUUID, onDiscovered);
