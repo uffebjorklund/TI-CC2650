@@ -1,4 +1,6 @@
-﻿namespace CC2650.Modules.Controller
+﻿using XSockets.Protocol.Mqtt.Modules.Controller;
+
+namespace CC2650.Modules.Controller
 {
     using XSockets.Core.Common.Socket.Event.Attributes;    
     using System.Threading.Tasks;
@@ -60,7 +62,7 @@
             //Send only the clients mathching the expression
             this.InvokeTo<Monitor>(p => p.TempLimit <= model.obj || p.TempLimit <= model.amb, this.SensorInfo,"irtempchange");     
             //POC - Notify MQTT clients that subscribe for "irtempchange"...
-            this.MqttPublish(this.SensorInfo,"irtempchange");            
+            this.InvokeToAll<MqttController>(this.SensorInfo, "irtempchange");
         }
 
         public void IrTempNotify(SensorInfo sensorInfo)

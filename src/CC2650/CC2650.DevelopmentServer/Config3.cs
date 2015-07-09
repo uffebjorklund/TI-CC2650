@@ -12,6 +12,6 @@ namespace CC2650.DevelopmentServer
 
     public class Config4 : ConfigurationSetting
     {
-        public Config4() : base("ws://192.168.254.154:4502") { }
+        public Config4() : base("ws://192.168.254.154:8080") { }
     }
 }

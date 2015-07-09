@@ -1,0 +1,26 @@
+﻿2015-07-08 21:07:53.153 +02:00 [Information] License Information: LicenseTerms { LicenseType: Developer, Scaling: True, ConnectionLimit: -1, StartDate: 06/08/2015 00:00:00, EndDate: 09/01/2015 00:00:00, OwnerName: "Team XSockets.NET v5 Alpha1", Corporate: "N/A", Address: "N/A", PostalCode: "N/A", City: "N/A", Country: "N/A", Id: e0864198-fb2b-41f4-a9a0-d97bbda3917b, IsValid: True }
+2015-07-08 21:07:53.200 +02:00 [Warning] The XSockets.NET Developer license will let the server run for 5 days per start, but will have all features enabled
+2015-07-08 21:07:53.215 +02:00 [Warning] Server will shut down in 4 days 23:59:59
+2015-07-08 21:07:53.215 +02:00 [Information] Server starting at 07/08/2015 21:07:53 with interceptors True
+2015-07-08 21:07:53.231 +02:00 [Information] "Starting Endpoint with" { Origin: ["*"], Host: "127.0.0.1", Port: 8080, IsLoopback: True, IsSecure: False, BacklogSize: 20, ThreadPoolSize: 200, CompletionPortThreads: 2, Certificate: null, CertificateLocation: LocalMachine, CertificateSubjectDistinguishedName: "cn=localhost", ForceClientCertificate: False }
+2015-07-08 21:07:53.247 +02:00 [Information] "Starting Endpoint with" { Origin: ["*"], Host: "127.0.0.1", Port: 4502, IsLoopback: True, IsSecure: False, BacklogSize: 20, ThreadPoolSize: 200, CompletionPortThreads: 2, Certificate: null, CertificateLocation: LocalMachine, CertificateSubjectDistinguishedName: "cn=localhost", ForceClientCertificate: False }
+2015-07-08 21:07:53.262 +02:00 [Information] "Starting Endpoint with" { Origin: ["*"], Host: "127.0.0.1", Port: 8181, IsLoopback: True, IsSecure: False, BacklogSize: 20, ThreadPoolSize: 200, CompletionPortThreads: 2, Certificate: null, CertificateLocation: LocalMachine, CertificateSubjectDistinguishedName: "cn=localhost", ForceClientCertificate: False }
+2015-07-08 21:09:05.163 +02:00 [Error] InvokePluginMethod<T>. Data passed to controller "sensor" and method "IrTempChange" with data "\"21,23\""
+Newtonsoft.Json.JsonSerializationException: Error converting value "21,23" to type 'CC2650.Modules.Model.TempModel'. Path '', line 1, position 7. ---> System.ArgumentException: Could not cast or convert from System.String to CC2650.Modules.Model.TempModel.
+   at Newtonsoft.Json.Utilities.ConvertUtils.EnsureTypeAssignable(Object value, Type initialType, Type targetType)
+   at Newtonsoft.Json.Utilities.ConvertUtils.ConvertOrCast(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   --- End of inner exception stack trace ---
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureType(JsonReader reader, Object value, CultureInfo culture, JsonContract contract, Type targetType)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at XSockets.Serialization.XSocketJsonSerializer.DeserializeFromString(String json, Type type)
+   at XSockets.Core.XSocket.Helpers.XSocketHelper.ExtractMethodParameters(ParameterInfo[] parameterInfo, IXSocketController controller, String json)
+   at XSockets.Core.XSocket.Helpers.XSocketHelper.<InvokePluginMethod>d__24`1.MoveNext()
+2015-07-08 21:09:45.600 +02:00 [Error] VerifyController
+System.NotImplementedException: The controller name was not found in loaded plugins
+2015-07-08 21:12:22.012 +02:00 [Error] OnMessage
+System.NotImplementedException: There was no action method defined for the event. To dispatch anonymous events to all clients listening override the 'OnMessage' method in your controller

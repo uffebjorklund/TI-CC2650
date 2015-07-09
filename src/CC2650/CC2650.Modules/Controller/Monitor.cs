@@ -40,7 +40,7 @@
         {
             //Send back containerId so see if we are on different servers when scaling
             await this.Invoke(Composable.GetExport<IXSocketServerContainer>().ContainerId, "containerid");
-
+            //Default temp limit
             this.TempLimit = 10;
             //Find all sensors and get latest known value and name
             var sensors = this.FindOn<Sensor>().Select(p => p.SensorInfo);

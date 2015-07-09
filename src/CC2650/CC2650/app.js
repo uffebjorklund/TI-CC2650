@@ -4,10 +4,10 @@
 var sensorTagLocation = 'sensortag';
 var xsocketsLocation = 'xsockets.net';
 var targetUUID = undefined;
-var server = 'localhost';
-var port = 4502;
-//var server = 'cc2650.cloudapp.net';
-//var port = 8080;
+//var server = 'localhost';
+//var port = 4502;
+var server = 'cc2650.cloudapp.net';
+var port = 8080;
 
 var TexasInstrument = {} || TexasInstrument;
 TexasInstrument.CC2650 = (function (sensortag, xsockets) {
@@ -23,7 +23,7 @@ TexasInstrument.CC2650 = (function (sensortag, xsockets) {
         //When the controller is open on the server set the name of the unit and start scanning for SensorTags
         sensorcontroller.onopen = function () {
             //Set Name
-            sensorcontroller.setProperty('SetName', 'CC2650@NDCOslo');
+            sensorcontroller.send('SetName', 'CC2650@MalagaMakers');
             if(targetUUID) {
                 console.log('connecting to ', targetUUID);
                 sensortag.discoverByUuid(targetUUID, onDiscovered);
