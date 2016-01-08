@@ -151,7 +151,8 @@ The complete operation would look like
 
 ###Read/Write data
 In the previous section we used the gatttool to connect to the sensortag. Now lets continue with the gatttool to read and write data to the sensortag. To know what to read and write from the sensortag we need to take a look at the GATT services of the sensortag CC2650. Texas Instruments provides GATT-tables for all services. There is a lot of information, but lets focus on the IR-Temperature service. The table looks like this.
-![enter image description here](http://xsockets.net/$2/file/gatt-table-irtemp.png)
+
+![GATT table](https://xsockets.net/wp-content/uploads/2015/09/gatttable1-1024x426.png)
 
 By using gatttool we can now read data with “***char-read-hnd &lt;hex handle&gt;***”, and write data with “***char-write-cmd &lt;hex handle&gt; &lt;new value&gt;***”
 
@@ -222,7 +223,7 @@ Create a folder called CC2650 and navigate to it.
     
 #### Install xsockets.net library
 
-	npm install xsockets.net
+    npm install xsockets.net
 
 ### Code
 The complete code for the client (~70 lines) can be found in the github repository, but the important parts is covered here. Just place the *app.js* file in the folder where you installed the packages above.
@@ -244,7 +245,7 @@ When temperature changes on the sensortag
        
 When a monitoring client enables IR-Temperature 
 
-	sensorcontroller.on('enableirtemp', self.enableIrTemperature);
+    sensorcontroller.on('enableirtemp', self.enableIrTemperature);
                     
 When a monitoring client some where in the world disables the IR-Temperature
              
@@ -261,7 +262,7 @@ This is the controller that the sensor client will use to send data to. The conc
  - Sensors that get IR-Temperature enabled/disabled
  - Changed in temperature on the sensor
 
-![enter image description here](http://xsockets.net/$2/file/sensorcontroller.png)
+![sensor controller](https://xsockets.net/wp-content/uploads/2015/09/sensorcontroller.png)
 
 ### Monitor Controller
 The monitor controller is even simpler than the sensor controller. This only has three methods.
@@ -272,7 +273,7 @@ The monitor controller is even simpler than the sensor controller. This only has
 
 By passing in the connection id that we know from the sensor client the server can target the correct sensor to disable/enable.
 
-![enter image description here](http://xsockets.net/$2/file/monitorcontroller.png)
+![monitor controller](https://xsockets.net/wp-content/uploads/2015/09/monitor_controller-1024x656.png)
 
 ##Monitoring Client
 Since you can connect anything to the real-time server (XSockets) you can control the sensor from pretty much anything. Your imagination sets the limits! In this sample I will only use a basic webpage and JavaScript to read/write data from the sensor.
@@ -318,7 +319,7 @@ When a monitoring client some where in the world enables the IR-Temperature
 ### Up & Running
 An image showing the result from my development machine. We see the sensor tag connected over BLE to a Raspberry Pi that uses NodeJS to communicate with XSockets. Then XSockets sends data to all clients, in this case just a webpage. We can also enable/disable the sensors services directly from the webpage (or any other client).
 
-![enter image description here](http://xsockets.net/$2/file/cc2650communicationdiagram.png)
+![up and running](https://xsockets.net/wp-content/uploads/2015/09/up_and_running.png)
 
 #Deploying to Azure
 To host this solution on Azure we need to create a Worker Role that will host the XSockets server. Since we already have our XSockets modules in a separate class library we just need to reference that assembly.
@@ -329,15 +330,19 @@ To be able to connect to the server on Azure we need to start the server on atle
 Since we want to be able to run on localhost we configure both the "ServiceConfiguration.Local.cscfg" as well as the "ServiceConfiguration.Cloud.cscfg"
 
 Local
-![enter image description here](http://xsockets.net/$2/file/sesnor-localconfig.png)
+
+![local config](https://xsockets.net/wp-content/uploads/2015/09/localconfig.png)
 
 Cloud
 *Note: you should of course replace "cc2650.cloudapp.net" with the uri you deploy to.*
-![enter image description here](http://xsockets.net/$2/file/snesor-cloudconfig.png)
+
+![cloud config](https://xsockets.net/wp-content/uploads/2015/09/cloudconfig.png)
 
 ###Service Endpoint
 We can run the server on multiple endpoints, but here we only setup port 8080. 
-![enter image description here](http://xsockets.net/$2/file/azure-config.png)
+
+![endpoints](https://xsockets.net/wp-content/uploads/2015/09/endpoint.png)
+
 So when the local config is used we run on 127.0.0.1:8080 and when the cloud config is used we run on cc2650.cloudapp.net:8080
 ##Starting
 We will start the server in the "OnStart" method of the Worker Role, the extension method called "StartOnAzure" will create configurations based on the configuration combined with the service endpoint.
