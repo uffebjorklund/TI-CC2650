@@ -13,7 +13,7 @@ The SimpleLink™ multi-standard CC2650 wireless MCU from Texas Instruments is a
 In this post we will take a look at how we can extend communication with CC2650 by adding a full-duplex communication layer behind the Bluetooth low energy central, so that we can read and write in to CC2650 from anywhere in the world. Since this might feel a bit abstract the image below might help to visualize what we are going to do.
 
 There are many ways to connect to a peripheral Bluetooth Smart device, but in this post we will be using a Raspberry Pi 2 as the BLE central device.
-![Communication](http://xsockets.net/$2/file/article-cc2650-1.png)
+![Communication](https://xsockets.net/wp-content/uploads/2015/09/mission-300x63.png)
 
 The image illustrates that the CC2650 wireless MCU communicates with the RaspberryPi over Bluetooth low energy. Then the Pi has a TCP/IP  connection with XSockets (in this case using NodeJS) to be able to send/receive data in full-duplex. XSockets will then be able to send/receive data from any TCP/IP connection so that we can read/write to the CC2650 from anywhere. In the image above the clients is represented by a few selected ones, but it can be anything that has TCP/IP.
 
