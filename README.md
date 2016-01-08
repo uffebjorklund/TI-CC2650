@@ -31,6 +31,7 @@ We will install some additional software later on, but the post assume that you 
  - WiFi USB adapter
  - 8 GB Micro SD card
  - TI-CC2650 SensorTag
+
 ##Software
  - The NOOBS image from http://www.raspberrypi.org/downloads/ on the Raspberry Pi
  - Windows 8 (dev machine)
