@@ -361,13 +361,6 @@ The biggest challenge (for me) when building this was to setup BLE on the Raspbe
 ## What's next?
 This post only uses the IR-Temperature service from the CC2650. I will continue to improve the solution and add support for more services as well as support for multiple SensorTags so that people around the world can register their own tags to be shown on Azure.
 
-##Video
-A short video showing how to deploy and test the solution.
-[link here]
-
-##GitHub Repository
-The complete solution is available on [GitHub](https://github.com/uffebjorklund/TI-CC2650)
-
 #Resources
  - The sensortag lib on-top of Noble https://github.com/sandeepmistry/node-sensortag
  - Noble https://github.com/sandeepmistry/noble 
